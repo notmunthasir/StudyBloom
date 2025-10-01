@@ -9,12 +9,12 @@ body {
   background: #f4f7fb;
 }
 
-.white{
+.white, option{
     color: var(--Text-color) !important;
 }
 
 h1, h2, h3, h4{font-family: "Merienda", cursive;}
-a, i, p, .white{font-family: "Delius", cursive;}
+a, i, p, .white, option{font-family: "Delius", cursive;}
 
 .btn:hover{
     background-color: white !important;
@@ -47,7 +47,18 @@ header{
 
 .main{
     margin-left: 270px;
-    padding: 20px;
+}
+
+.paddingTop{
+    padding-top: 155px;
+}
+.marginTop{
+    margin-top: 72px;
+}
+
+.shotBy{
+    max-width: 195px;
+    margin-left: 10px;
 }
 
 footer{
