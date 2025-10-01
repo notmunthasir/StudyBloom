@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/LogosAndOthersPhotos/logoStudyBloom.png"></link>
+    <title>StudyBloom</title>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css" integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./CSS/style.css">
+    
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="./CSS/responsive.css">
+  </head>
+  <body>
+    <!-- Circles always visible -->
+      <div class="circle" style="--rand: 0.2; --rand2: 0.5"></div>
+      <div class="circle" style="--rand: 0.8; --rand2: 0.3"></div>
+      <div class="circle" style="--rand: 0.5; --rand2: 0.7"></div>
+      <div class="circle" style="--rand: 0.3; --rand2: 0.2"></div>
+      <div class="circle" style="--rand: 0.7; --rand2: 0.4"></div>
+      <div class="circle" style="--rand: 0.4; --rand2: 0.6"></div>
+      <div class="circle" style="--rand: 0.6; --rand2: 0.1"></div>
+      <div class="circle" style="--rand: 0.1; --rand2: 0.8"></div>
+      <div class="circle" style="--rand: 0.3; --rand2: 0.9"></div>
+      <div class="circle" style="--rand: 0.5; --rand2: 0.2"></div>
+      <div class="circle" style="--rand: 0.2; --rand2: 0.4"></div>
+      <div class="circle" style="--rand: 0.6; --rand2: 0.3"></div>
+      <div class="circle" style="--rand: 0.5; --rand2: 0.6"></div>
+      <div class="circle" style="--rand: 0.8; --rand2: 0.2"></div>
+      <div class="circle" style="--rand: 0.3; --rand2: 0.7"></div>
+
+    <div class="main-container" id="mainContainer">
+      <div class="center-content">
+        <h1>StudyBloom</h1>
+        <p>“Notes made simple. Success made easy.”</p>
+        <div class="buttons">
+          <button id="ClassNotes">Class Notes</button>
+          <button data-name="Daily Quiz">Daily Quiz</button>
+          <button data-name="Practice Exam">Practice Exam</button>
+          <button data-name="Coming Soon">Coming Soon</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup-card" id="popupCard">
+      <h2 id="popupTitle"></h2>
+      <p>The system is under development.</p>
+      <button id="closeBtn">Return to Home Page</button>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./JS/play.js"></script>
+  </body>
+</html>

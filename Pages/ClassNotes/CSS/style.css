@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Merienda:wght@300..900&display=swap');
+
+:root{
+    --Text-color: rgba(255, 255, 255, 0.75);
+    --secondary-color: rgb(64 64 64 / 10%);
+}
+
+body {
+  background: #f4f7fb;
+}
+
+.white{
+    color: var(--Text-color) !important;
+}
+
+h1, h2, h3, h4{font-family: "Merienda", cursive;}
+a, i, p, .white{font-family: "Delius", cursive;}
+
+.btn:hover{
+    background-color: white !important;
+    color: #000 !important;
+    transition: all linear 0.25s;
+}
+
+.z-100 {z-index: 100 !important;}
+.z-200 {z-index: 200 !important;}
+
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.barColor {
+  background: linear-gradient(180deg, #1f2937, #111827);
+  color: #fff !important;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.08);
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 280px;
+  max-width: 320px;
+  min-height: 100vh;
+}
+
+.main{
+    margin-left: 270px;
+    padding: 20px;
+}
+
+footer{
+    background: linear-gradient(180deg, #1f2937, #111827);
+    color: var(--Text-color);
+    margin-top: 50px;
+}

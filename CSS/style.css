@@ -1,0 +1,203 @@
+/* ===========================
+  Global Styles
+  =========================== */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #020617); /* Dark gradient background */
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  transition: opacity 0.8s ease; /* smooth fade */
+}
+
+/* ===========================
+  Animation Variables
+  =========================== */
+
+:root {
+  /* Animation durations for each circle (controls speed of floating) */
+  --duration-1: 10s;  /* Circle 1 */
+  --duration-2: 11s;  /* Circle 2 */
+  --duration-3: 12s;  /* Circle 3 */
+  --duration-4: 13s;  /* Circle 4 */
+  --duration-5: 14s;  /* Circle 5 */
+  --duration-6: 12s;  /* Circle 6 */
+  --duration-7: 10s;  /* Circle 7 */
+  --duration-8: 11s;  /* Circle 8 */
+  --duration-9: 12s;  /* Circle 9 */
+  --duration-10: 13s; /* Circle 10 */
+  --duration-11: 14s; /* Circle 11 */
+  --duration-12: 15s; /* Circle 12 */
+  --duration-13: 12s; /* Circle 13 */
+  --duration-14: 13s; /* Circle 14 */
+  --duration-15: 14s; /* Circle 15 */
+
+  /* Animation delays for each circle (stagger animation start times) */
+  --delay-1: 0.1s;   /* Circle 1 */
+  --delay-2: 0.15s;  /* Circle 2 */
+  --delay-3: 0.2s;   /* Circle 3 */
+  --delay-4: 0.25s;  /* Circle 4 */
+  --delay-5: 0.3s;   /* Circle 5 */
+  --delay-6: 0.35s;  /* Circle 6 */
+  --delay-7: 0.4s;   /* Circle 7 */
+  --delay-8: 0.45s;  /* Circle 8 */
+  --delay-9: 0.5s;   /* Circle 9 */
+  --delay-10: 0.55s; /* Circle 10 */
+  --delay-11: 0.6s;  /* Circle 11 */
+  --delay-12: 0.65s; /* Circle 12 */
+  --delay-13: 0.7s;  /* Circle 13 */
+  --delay-14: 0.75s; /* Circle 14 */
+  --delay-15: 0.8s;  /* Circle 15 */
+}
+
+/* ===========================
+  Animated Circles Background
+  =========================== */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation-name: float;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  z-index: 0;
+}
+
+/* Individual circle positions, sizes, colors, durations, and delays */
+.circle:nth-child(1)  { width:8vw;  height:8vw;  top:5%;   left:10%; background:#60a5fa; animation-duration:var(--duration-1);  animation-delay:var(--delay-1);}
+.circle:nth-child(2)  { width:5vw;  height:5vw;  top:15%;  left:30%; background:#a78bfa; animation-duration:var(--duration-2);  animation-delay:var(--delay-2);}
+.circle:nth-child(3)  { width:9vw;  height:9vw;  top:25%;  left:50%; background:#34d399; animation-duration:var(--duration-3);  animation-delay:var(--delay-3);}
+.circle:nth-child(4)  { width:6vw;  height:6vw;  top:10%;  left:70%; background:#f472b6; animation-duration:var(--duration-4);  animation-delay:var(--delay-4);}
+.circle:nth-child(5)  { width:5vw;  height:5vw;  top:35%;  left:20%; background:#facc15; animation-duration:var(--duration-5);  animation-delay:var(--delay-5);}
+.circle:nth-child(6)  { width:10vw; height:10vw; top:50%;  left:60%; background:#3b82f6; animation-duration:var(--duration-6);  animation-delay:var(--delay-6);}
+.circle:nth-child(7)  { width:8vw;  height:8vw;  top:70%;  left:40%; background:#8b5cf6; animation-duration:var(--duration-7);  animation-delay:var(--delay-7);}
+.circle:nth-child(8)  { width:4vw;  height:4vw;  top:60%;  left:80%; background:#f472b6; animation-duration:var(--duration-8);  animation-delay:var(--delay-8);}
+.circle:nth-child(9)  { width:7vw;  height:7vw;  top:80%;  left:25%; background:#22c55e; animation-duration:var(--duration-9);  animation-delay:var(--delay-9);}
+.circle:nth-child(10) { width:6vw;  height:6vw;  top:40%;  left:90%; background:#f97316; animation-duration:var(--duration-10); animation-delay:var(--delay-10);}
+.circle:nth-child(11) { width:5vw;  height:5vw;  top:20%;  left:15%; background:#3b82f6; animation-duration:var(--duration-11); animation-delay:var(--delay-11);}
+.circle:nth-child(12) { width:9vw;  height:9vw;  top:55%;  left:35%; background:#a78bfa; animation-duration:var(--duration-12); animation-delay:var(--delay-12);}
+.circle:nth-child(13) { width:7vw;  height:7vw;  top:65%;  left:50%; background:#f472b6; animation-duration:var(--duration-13); animation-delay:var(--delay-13);}
+.circle:nth-child(14) { width:6vw;  height:6vw;  top:30%;  left:75%; background:#60a5fa; animation-duration:var(--duration-14); animation-delay:var(--delay-14);}
+.circle:nth-child(15) { width:8vw;  height:8vw;  top:75%;  left:10%; background:#facc15; animation-duration:var(--duration-15); animation-delay:var(--delay-15);}
+
+/* Floating animation for circles */
+@keyframes float {
+  0%   { transform: translate(0,0) scale(1); opacity:0.6; }
+  25%  { transform: translate(calc(-5vw + 10vw * var(--rand,0.5)), calc(-5vh + 10vh * var(--rand2,0.5))) scale(1.05); opacity:0.8; }
+  50%  { transform: translate(calc(-8vw + 16vw * var(--rand,0.3)), calc(-8vh + 16vh * var(--rand2,0.7))) scale(1); opacity:1; }
+  75%  { transform: translate(calc(-6vw + 12vw * var(--rand,0.6)), calc(-6vh + 12vh * var(--rand2,0.4))) scale(1.1); opacity:0.75; }
+  100% { transform: translate(0,0) scale(1.2); opacity:0; }
+}
+
+/* ===========================
+  Main Content Centering
+  =========================== */
+.main-container {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+  transition: filter 0.5s, opacity 0.5s;
+}
+
+/* Blur effect when popup is active */
+.main-container.blur {
+  filter: blur(5px);
+}
+
+/* ===========================
+  Center Content Styles
+  =========================== */
+.center-content h1 {
+  font-size: 3rem;
+  color: #60a5fa;
+  margin-bottom: 10px;
+}
+.center-content p {
+  font-size: 1.2rem;
+  color: #a1a1aa;
+  margin-bottom: 30px;
+}
+
+/* ===========================
+  Button Styles
+  =========================== */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+.buttons button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #34d399, #3b82f6);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.buttons button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(56,189,248,0.5);
+}
+
+/* ===========================
+  Popup Card Styles
+  =========================== */
+.popup-card {
+  display: none;
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(0.8) translateY(-50px);
+  background: rgba(15,23,42,0.4); 
+  backdrop-filter: blur(15px);    
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  z-index: 2;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.1);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* Show popup card with animation */
+.popup-card.show {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1) translateY(0);
+}
+
+/* Popup card content styles */
+.popup-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #60a5fa;
+}
+.popup-card p {
+  font-size: 1rem;
+  color: #a1a1aa;
+  margin-bottom: 20px;
+}
+.popup-card button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #34d399, #3b82f6);
+  color: #fff;
+  cursor: pointer;
+}
+.popup-card button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(56,189,248,0.5);
+}
