@@ -3,8 +3,6 @@ $(document).ready(function() {
   // Show welcome box on load
   $("#welcomeBox").show(500);
 
-  
-
   let currentSubject = "";
 
   const teachers = {
