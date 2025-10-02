@@ -5,6 +5,7 @@ $(document).ready(function() {
 
   let currentSubject = "";
 
+  // Teachers for each subject
   const teachers = {
     Bangla:["Shanti Miss","Atia ferdaus Miss"],
     English:["Tauhidul Sir","Sagar Sir"],
@@ -19,7 +20,7 @@ $(document).ready(function() {
   $(".subject-btn").click(function(e){
     e.preventDefault();
     currentSubject = $(this).data("subject");
-
+ 
     $("#welcomeBox").hide(500);
     $("#filterBox").show(300);          
     $("#teacherBox, #dateBox").hide(300);
@@ -54,13 +55,18 @@ $(document).ready(function() {
       let subs = teachers[currentSubject];
       $("#teacherSelect").empty().append('<option value="" selected>Select Teacher</option>');
       subs.forEach(t=> $("#teacherSelect").append(`<option>${t}</option>`));
-      $("#teacherBox").show();
+      $("#teacherBox").show(300);
+    }else {
+      $("#teacherBox").hide(500);
     }
-    if(filter==="selectDate" || filter==="nameAndDate" || filter==="proxy"){
-      $("#dateBox").show();
-    }
-    filterCards();
 
+    if(filter==="selectDate" || filter==="nameAndDate" || filter==="proxy"){
+      $("#dateBox").show(300);
+    }else {
+      $("#dateBox").hide(500);
+    }
+
+    filterCards();
   }); 
 
   // CLEAR BUTTONS
@@ -68,6 +74,7 @@ $(document).ready(function() {
     $("#teacherSelect").val(""); 
     filterCards(); 
   });
+
   $("#clearDate").click(function(){ 
     $("#dateSelect").val(""); 
     filterCards(); 
@@ -78,7 +85,7 @@ $(document).ready(function() {
 
   // FUNCTION TO FILTER CARDS
   function filterCards(){
-    $(".subject-card").hide();
+    $(".subject-card").hide(500);
     let filter = $("#filterSelect").val();
     let teacherVal = $("#teacherSelect").val();
     let dateVal = $("#dateSelect").val();
@@ -89,14 +96,15 @@ $(document).ready(function() {
       $(".subject-card").each(function(){
         let cardDate = $(this).data("date");
         if(!dateVal || cardDate===dateVal){
-          $(this).show();
+          $(this).show(300);
           anyShown = true;
         }
       });
+
       if(!anyShown){
-        $("#welcomeBox").show();
+        $("#welcomeBox").show(300);
       } else {
-        $("#welcomeBox").hide();
+        $("#welcomeBox").hide(500);
       }
       return; 
     }
@@ -110,20 +118,28 @@ $(document).ready(function() {
 
       // If no filter is selected or filter=unit, show all
       if(!filter || filter==="unit") {
-        $(this).show();
+        $(this).show(300);
         return;
       }
 
-      if(filter==="SelectTeacher" && teacherVal && cardTeacher!==teacherVal) show=false;
-      if(filter==="selectDate" && dateVal && cardDate!==dateVal) show=false;
+      if(filter==="SelectTeacher" && teacherVal && cardTeacher!==teacherVal) 
+        show=false;
+
+      if(filter==="selectDate" && dateVal && cardDate!==dateVal) 
+        show=false;
+
       if(filter==="nameAndDate"){
         if(teacherVal && cardTeacher!==teacherVal) show=false;
         if(dateVal && cardDate!==dateVal) show=false;
       }
-      if(filter==="proxy" && !isProxy) show=false;
-      if(filter==="proxy" && dateVal && cardDate!==dateVal) show=false;
+      if(filter==="proxy" && !isProxy) 
+        show=false;
 
-      if(show) $(this).show();
+      if(filter==="proxy" && dateVal && cardDate!==dateVal) 
+        show=false;
+
+      if(show) $(this).show(300);
+
     });
 
   } console.log("Ready");
