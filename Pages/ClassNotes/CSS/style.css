@@ -63,8 +63,8 @@ header{
     margin-left: 10px;
 }
 
-.totalNotes{
-  display: none;
+#welcomeBox, #filterBox, #teacherBox, #dateBox, .subject-card{
+    display: none;
 }
 
 footer{
