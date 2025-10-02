@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css" integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css"/>
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./CSS/style.css">
@@ -51,13 +51,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <div class="d-flex mx-auto py-0 ps-5">
                         <ul class="navbar-nav mb-2 mb-lg-0 fs-07 nav-btns">
-                            <li class="nav-item"><a class="btn btn-outline-light ms-1 px-3 white" href="#bng">Bangla</a></li>
-                            <li class="nav-item"><a class="btn btn-outline-light mx-1 px-3 white" href="#eng">English</a></li>
-                            <li class="nav-item"><a class="btn btn-outline-light mx-1 px-3 white" href="#acc">Accounting</a></li>
-                            <li class="nav-item"><a class="btn btn-outline-light mx-1 px-3 white" href="#bom">Business Organization and Management</a></li>
-                            <li class="nav-item"><a class="btn btn-outline-light mx-1 px-3 white" href="#finance">Finance, Banking, and Insurance</a></li>
-                            <li class="nav-item"><a class="btn btn-outline-light mx-1 px-3 white" href="#stat">Statistics</a></li>
-                            <li class="nav-item"><a class="btn btn-outline-light ms-1 px-3 white" href="#ict">ICT</a></li>
+                            <li class="nav-item"><a href="#" class="btn btn-outline-light ms-1 px-3 white subOption" data-subject="bgnNotes">Bangla</a></li>
+                            <li class="nav-item"><a href="#" class="btn btn-outline-light mx-1 px-3 white subOption" data-subject="engNotes">English</a></li>
+                            <li class="nav-item"><a href="#" class="btn btn-outline-light mx-1 px-3 white subOption" data-subject="accNotes">Accounting</a></li>
+                            <li class="nav-item"><a href="#" class="btn btn-outline-light mx-1 px-3 white subOption" data-subject="bomNotes">Business Organization and Management</a></li>
+                            <li class="nav-item"><a href="#" class="btn btn-outline-light mx-1 px-3 white subOption" data-subject="FinanceNotes">Finance, Banking, and Insurance</a></li>
+                            <li class="nav-item"><a href="#" class="btn btn-outline-light mx-1 px-3 white subOption" data-subject="statNotes">Statistics</a></li>
+                            <li class="nav-item"><a href="#" class="btn btn-outline-light ms-1 px-3 white subOption" data-subject="ictNotes">ICT</a></li>
                         </ul>
                     </div>
                 </div>
@@ -102,30 +102,54 @@
                     <option value="14102025">14th October 2025</option>
                     <option value="15102025">15th October 2025</option>
                     <option value="16102025">16th October 2025</option>
+                    <option value="19102025">19th October 2025</option>
+                    <option value="20102025">20th October 2025</option>
+                    <option value="21102025">21th October 2025</option>
+                    <option value="22102025">22th October 2025</option>
+                    <option value="23102025">23th October 2025</option>
+                    <option value="26102025">26th October 2025</option>
+                    <option value="27102025">27th October 2025</option>
+                    <option value="28102025">28th October 2025</option>
+                    <option value="29102025">29th October 2025</option>
+                    <option value="30102025">30th October 2025</option>
                 </select>
             </div>
             <select class="form-select mb-3 bg-dark text-white border-0" id="bngTeacher">
                 <option value="">Select lecturer's</option>
                 <!--bangla-->
-                <option value="bngTeacher01">Shanti Miss</option>
-                <option value="bngTeacher02">Atia ferdaus Miss</option>
+                    <div class="bngTeacher" id="bngTeacher">
+                        <option value="bngTeacher01">Shanti Miss</option>
+                        <option value="bngTeacher02">Atia ferdaus Miss</option>
+                    </div>
                 <!--English-->
-                <option value="engTeacher01">Tauhidul Sir</option>
-                <option value="engTeacher02">Sagar Sir</option>
+                    <div class="engTeacher" id="engTeacher">
+                        <option value="engTeacher01">Tauhidul Sir</option>
+                        <option value="engTeacher02">Sagar Sir</option>
+                    </div>
                 <!--Accounting-->
-                <option value="accTeacher01">Atik Sir</option>
-                <option value="accTeacher02">Mannan Sir</option>
+                    <div class="accTeacher" id="accTeacher">
+                        <option value="accTeacher01">Atik Sir</option>
+                        <option value="accTeacher02">Mannan Sir</option>
+                    </div>
                 <!--BOM-->
-                <option value="bomTeacher01">Razzak Sir</option>
-                <option value="bomTeacher02">Anowar Sir</option>
+                    <div class="bomTeacher" id="bomTeacher">
+                        <option value="bomTeacher01">Razzak Sir</option>
+                        <option value="bomTeacher02">Anowar Sir</option>
+                    </div>
                 <!--Finance, Banking and Insurance-->
-                <option value="FinanceTeacher01">Manik Sir</option>
-                <option value="FinanceTeacher02">Kaniz Miss</option>
+                    <div class="financeTeacher" id="financeTeacher">
+                        <option value="FinanceTeacher01">Manik Sir</option>
+                        <option value="FinanceTeacher02">Kaniz Miss</option>
+                    </div>
                 <!--Statistics-->
-                <option value="statTeacher01">Prokash Sir</option>
-                <option value="statTeacher02">Farid Sir</option>
+                    <div class="statTeacher" id="statTeacher">
+                        <option value="statTeacher01">Prokash Sir</option>
+                        <option value="statTeacher02">Farid Sir</option>
+                    </div>
                 <!--ICT-->
-                <option value="ictTeacher">Shirin Miss</option>
+                    <div class="ictTeacher" id="ictTeacher">
+                        <option value="ictTeacher">Shirin Miss</option>
+                    </div>
             </select>
         </div>
     </aside>
@@ -135,7 +159,7 @@
         <div class="main">
             <div class="d-flex flex-column flex-fill">
                 <main id="equTitle" class="flex-fill p-4">
-                    <div class="card shadow rounded-3 p-4 mb-4">
+                    <div id="welcomeBox" class="card shadow rounded-3 p-4 mb-4 totalNotes">
                         <h1 class="h4 mb-3">Class Notes</h1>
                         <p class="lead">
                             Access well-organized <strong>study notes</strong> to simplify learning 
@@ -153,7 +177,7 @@
                     <!-----===== Class Notes =====----->
                     <!-- Bangla Notes -->
 
-                    <div id="bgnNotes">
+                    <div id="bgnNotes" class="totalNotes">
                                             
                         <div class="card shadow rounded-3 p-4 mb-4">
                             <h1 class="h4 mb-3">Unit</h1>
@@ -259,7 +283,7 @@
 
                     <!-- English Notes -->
 
-                    <div id="engNotes">
+                    <div id="engNotes" class="totalNotes">
                                             
                         <div class="card shadow rounded-3 p-4 mb-4">
                             <h1 class="h4 mb-3">Unit</h1>
@@ -365,7 +389,7 @@
                     
                     <!-- Accounting Notes -->
 
-                    <div id="accNotes">
+                    <div id="accNotes" class="totalNotes">
                                             
                         <div class="card shadow rounded-3 p-4 mb-4">
                             <h1 class="h4 mb-3">Unit</h1>
@@ -471,7 +495,7 @@
                     
                     <!-- Business Organization and Management Notes -->
 
-                    <div id="bomNotes">
+                    <div id="bomNotes" class="totalNotes">
                                             
                         <div class="card shadow rounded-3 p-4 mb-4">
                             <h1 class="h4 mb-3">Unit</h1>
@@ -577,7 +601,7 @@
                     
                     <!-- Finance, Banking and Insurance Notes -->
 
-                    <div id="FinanceNotes">
+                    <div id="FinanceNotes" class="totalNotes">
                                             
                         <div class="card shadow rounded-3 p-4 mb-4">
                             <h1 class="h4 mb-3">Unit</h1>
@@ -683,7 +707,7 @@
                     
                     <!-- Statistics Notes -->
 
-                    <div id="statNotes">
+                    <div id="statNotes" class="totalNotes">
                                             
                         <div class="card shadow rounded-3 p-4 mb-4">
                             <h1 class="h4 mb-3">Unit</h1>
@@ -789,7 +813,7 @@
                     
                     <!-- ICT Notes -->
 
-                    <div id="ictNotes">
+                    <div id="ictNotes" class="totalNotes">
                                             
                         <div class="card shadow rounded-3 p-4 mb-4">
                             <h1 class="h4 mb-3">Unit</h1>

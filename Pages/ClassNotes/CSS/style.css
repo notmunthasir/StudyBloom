@@ -8,7 +8,7 @@
 body {
   background: #f4f7fb;
   scroll-behavior: smooth;
-  
+
 }
 
 .white, option{
@@ -61,6 +61,10 @@ header{
 .shotBy{
     max-width: 195px;
     margin-left: 10px;
+}
+
+.totalNotes{
+  display: none;
 }
 
 footer{
