@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css" integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./CSS/style.css">
@@ -24,11 +24,20 @@
     <header class="header barColor">
         <nav class="navbar navbar-expand-lg navbar-light shadow p-3 rounded py-3 ">
             <div class="container">
+
+                <button class="navbar-toggler shadow-none p-1 rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-filter"></i>
+                </button>
+
                 <img src="../gallery/logo.png" alt="logo" height="26" width="26">
                 <a class="navbar-brand fw-bold white" href="/index.html">StudyBloom</a>
+                
+                <button class="navbar-toggler shadow-none p-1 rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars-staggered"></i>
+                </button>
 
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <div class="d-flex mx-auto py-0 ps-5">
+                    <div class="d-flex mx-auto py-0">
                         <ul class="navbar-nav mb-2 mb-lg-0 fs-07 nav-btns">
                             <li class="nav-item"><a class="nav-link px-3 white" href="#home">Home</a></li>
                             <li class="nav-item"><a class="nav-link px-3 white" href="#notes">Notes</a></li>
@@ -47,20 +56,18 @@
     <!-- Subject Navigation Bar -->
      <header class="header barColor marginTop">
         <nav class="navbar navbar-expand-lg navbar-light shadow p-3 rounded py-3 ">
-            <div class="container">
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <div class="d-flex mx-auto py-0 ps-5">
-                        <ul class="navbar-nav mb-2 mb-lg-0 fs-07 nav-btns">
-                            <li class="nav-item"><a href="#" class="btn btn-outline-light mx-1 px-3 white subOption" data-subject="dailyNotes">Daily Notes</a></li>
-                            <li class="nav-item"><a href="#" class="btn btn-outline-light mx-1 px-3 white subject-btn" data-subject="Bangla">Bangla</a></li>
-                            <li class="nav-item"><a href="#" class="btn btn-outline-light mx-1 px-3 white subject-btn" data-subject="English">English</a></li>
-                            <li class="nav-item"><a href="#" class="btn btn-outline-light mx-1 px-3 white subject-btn" data-subject="Accounting">Accounting</a></li>
-                            <li class="nav-item"><a href="#" class="btn btn-outline-light mx-1 px-3 white subject-btn" data-subject="BOM">BOM Organization and Management</a></li>
-                            <li class="nav-item"><a href="#" class="btn btn-outline-light mx-1 px-3 white subject-btn" data-subject="Finance">Finance, Banking, and Insurance</a></li>
-                            <li class="nav-item"><a href="#" class="btn btn-outline-light mx-1 px-3 white subject-btn" data-subject="Statistics">Statistics</a></li>
-                            <li class="nav-item"><a href="#" class="btn btn-outline-light mx-1 px-3 white subject-btn" data-subject="ICT">ICT</a></li>
-                        </ul>
-                    </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="d-flex mx-auto py-0">
+                    <ul class="navbar-nav mb-2 mb-lg-0 fs-07 nav-btns">
+                        <li class="nav-item"><a href="#" class="btn btn-outline-light mx-1 px-3 white subOption" data-subject="dailyNotes">Daily Notes</a></li>
+                        <li class="nav-item"><a href="#" class="btn btn-outline-light mx-1 px-3 white subject-btn" data-subject="Bangla">Bangla</a></li>
+                        <li class="nav-item"><a href="#" class="btn btn-outline-light mx-1 px-3 white subject-btn" data-subject="English">English</a></li>
+                        <li class="nav-item"><a href="#" class="btn btn-outline-light mx-1 px-3 white subject-btn" data-subject="Accounting">Accounting</a></li>
+                        <li class="nav-item"><a href="#" class="btn btn-outline-light mx-1 px-3 white subject-btn" data-subject="BOM">BOM Organization and Management</a></li>
+                        <li class="nav-item"><a href="#" class="btn btn-outline-light mx-1 px-3 white subject-btn" data-subject="Finance">Finance, Banking, and Insurance</a></li>
+                        <li class="nav-item"><a href="#" class="btn btn-outline-light mx-1 px-3 white subject-btn" data-subject="Statistics">Statistics</a></li>
+                        <li class="nav-item"><a href="#" class="btn btn-outline-light mx-1 px-3 white subject-btn" data-subject="ICT">ICT</a></li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -776,9 +783,14 @@
         </div>
     </section>
 
-<!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"></script>
+    <!--===== Scripts =====-->
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.bundle.min.js" integrity="sha512-Tc0i+vRogmX4NN7tuLbQfBxa8JkfUSAxSFVzmU31nVdHyiHElPPy2cWfFacmCJKw0VqovrzKhdd2TSTMdAxp2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <!-- Custom JS -->
     <script src="./JS/play.js"></script>
   </body>
 </html>
