@@ -54,7 +54,7 @@ $(document).ready(function() {
     if(filter==="SelectTeacher" || filter==="nameAndDate"){
       let subs = teachers[currentSubject];
       $("#teacherSelect").empty().append('<option value="" selected>Select Teacher</option>');
-      subs.forEach(t=> $("#teacherSelect").append(`<option>${t}</option>`));
+      subs.forEach(t=> $("#teacherSelect").append(`<option value="${t}">${t}</option>`));
       $("#teacherBox").show(300);
     }else {
       $("#teacherBox").hide(500);
