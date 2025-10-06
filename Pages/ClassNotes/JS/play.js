@@ -20,7 +20,7 @@ $(document).ready(function() {
   $(".subject-btn").click(function(e){
     e.preventDefault();
     currentSubject = $(this).data("subject");
- 
+
     $("#welcomeBox").hide(500);
     $("#filterBox").show(300);          
     $("#teacherBox, #dateBox").hide(300);
@@ -72,11 +72,13 @@ $(document).ready(function() {
   // CLEAR BUTTONS
   $("#clearTeacher").click(function(){ 
     $("#teacherSelect").val(""); 
+
     filterCards(); 
   });
 
   $("#clearDate").click(function(){ 
-    $("#dateSelect").val(""); 
+    $("#dateSelect").val("");
+
     filterCards(); 
   });
 
@@ -95,6 +97,7 @@ $(document).ready(function() {
       let anyShown = false;
       $(".subject-card").each(function(){
         let cardDate = $(this).data("date");
+        
         if(!dateVal || cardDate===dateVal){
           $(this).show(300);
           anyShown = true;
@@ -142,5 +145,6 @@ $(document).ready(function() {
 
     });
 
-  } console.log("Ready");
+  }
+
 });
