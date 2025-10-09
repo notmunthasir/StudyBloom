@@ -63,12 +63,8 @@ header{
     margin-left: 10px;
 }
 
-#welcomeBox, #filterBox, #teacherBox, #dateBox, .subject-card{
+#welcomeBox, #filterBox, 
+#teacherBox, #dateBox, 
+.subject-card, .allFilters{
     display: none;
-}
-
-footer{
-    background: linear-gradient(180deg, #1f2937, #111827);
-    color: var(--Text-color);
-    margin-top: 50px;
 }

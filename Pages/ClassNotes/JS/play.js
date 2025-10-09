@@ -22,10 +22,10 @@ $(document).ready(function() {
     currentSubject = $(this).data("subject");
 
     $("#welcomeBox").hide(500);
-    $("#filterBox").show(300);          
-    $("#teacherBox, #dateBox").hide(300);
-    $("#teacherSelect").val("");
-    $("#dateSelect").val("");
+    $("#filterBox, #filterBoxShot").show(300);          
+    $("#teacherBox, #teacherBox, #dateBox, #dateBoxShot").hide(300);
+    $("#teacherSelect, #teacherSelectShot").val("");
+    $("#dateSelect, #dateSelectShot").val("");
 
     filterCards();
   });
@@ -36,65 +36,78 @@ $(document).ready(function() {
     currentSubject = $(this).data("subject");
 
     $("#welcomeBox").hide(500);
-    $("#filterBox").hide(500);         
-    $("#teacherBox").hide(500);
-    $("#dateBox").show(500);           
-    $("#dateSelect").val("");
+    $("#filterBox, #filterBoxShot").hide(500);         
+    $("#teacherBox, #teacherBox").hide(500);
+    $("#dateBox, #dateBoxShot").show(500);           
+    $("#dateSelect, #dateSelectShot").val("");
 
     filterCards();
   });
 
   // FILTER SELECTION CHANGE
-  $("#filterSelect").change(function(){
-    $("#teacherBox, #dateBox").hide(300);
-    $("#teacherSelect").val("");
-    $("#dateSelect").val("");
+  $("#filterSelect, #filterSelectShot").change(function(){
+    $("#teacherBox, #teacherBox, #dateBox, #dateBoxShot").hide(300);
+    $("#teacherSelect, #teacherSelectShot").val("");
+    $("#dateSelect, #dateSelectShot").val("");
 
     let filter = $(this).val();
     if(filter==="SelectTeacher" || filter==="nameAndDate"){
       let subs = teachers[currentSubject];
-      $("#teacherSelect").empty().append('<option value="" selected>Select Teacher</option>');
-      subs.forEach(t=> $("#teacherSelect").append(`<option value="${t}">${t}</option>`));
-      $("#teacherBox").show(300);
+      $("#teacherSelect, #teacherSelectShot").empty().append('<option value="" selected>Select Teacher</option>');
+      subs.forEach(t=> $("#teacherSelect, #teacherSelectShot").append(`<option value="${t}">${t}</option>`));
+      $("#teacherBox, #teacherBox").show(300);
     }else {
-      $("#teacherBox").hide(500);
+      $("#teacherBox, #teacherBox").hide(500);
     }
 
     if(filter==="selectDate" || filter==="nameAndDate" || filter==="proxy"){
-      $("#dateBox").show(300);
+      $("#dateBox, #dateBoxShot").show(300);
     }else {
-      $("#dateBox").hide(500);
+      $("#dateBox, #dateBoxShot").hide(500);
     }
 
     filterCards();
   }); 
 
   // CLEAR BUTTONS
-  $("#clearTeacher").click(function(){ 
-    $("#teacherSelect").val(""); 
+  $("#clearTeacher, #clearTeacher02").click(function(){ 
+    $("#teacherSelect, #teacherSelectShot").val(""); 
 
     filterCards(); 
   });
 
-  $("#clearDate").click(function(){ 
-    $("#dateSelect").val("");
+  $("#clearDate, #clearDate02").click(function(){ 
+    $("#dateSelect, #dateSelectShot").val("");
 
     filterCards(); 
   });
 
   // TEACHER & DATE SELECTION CHANGE
-  $("#teacherSelect, #dateSelect").change(filterCards);
+  $("#teacherSelect, #teacherSelectShot, #dateSelect, #dateSelectShot").change(filterCards);
 
   // FUNCTION TO FILTER CARDS
   function filterCards(){
+
     $(".subject-card").hide(500);
+
     let filter = $("#filterSelect").val();
     let teacherVal = $("#teacherSelect").val();
     let dateVal = $("#dateSelect").val();
 
+    // 🔹 Short (mobile) selects
+    let filterShot = $("#filterSelectShot").val();
+    let teacherShotVal = $("#teacherSelectShot").val();
+    let dateShotVal = $("#dateSelectShot").val();
+
+    // 🔹 Combine (use whichever has a value)
+    filter = filter || filterShot;
+    teacherVal = teacherVal || teacherShotVal;
+    dateVal = dateVal || dateShotVal;
+
     // DAILY NOTES BUTTON CASE
     if(currentSubject==="dailyNotes"){
       let anyShown = false;
+      
       $(".subject-card").each(function(){
         let cardDate = $(this).data("date");
         
@@ -109,7 +122,8 @@ $(document).ready(function() {
       } else {
         $("#welcomeBox").hide(500);
       }
-      return; 
+      return;
+
     }
 
     // NORMAL SUBJECT FILTERING
@@ -121,10 +135,10 @@ $(document).ready(function() {
 
       // If no filter is selected or filter=unit, show all
       if(!filter || filter==="unit") {
-        $(this).show(300);
+        $(this).show(500);
         return;
       }
-
+      
       if(filter==="SelectTeacher" && teacherVal && cardTeacher!==teacherVal) 
         show=false;
 
@@ -135,6 +149,7 @@ $(document).ready(function() {
         if(teacherVal && cardTeacher!==teacherVal) show=false;
         if(dateVal && cardDate!==dateVal) show=false;
       }
+
       if(filter==="proxy" && !isProxy) 
         show=false;
 
@@ -142,9 +157,8 @@ $(document).ready(function() {
         show=false;
 
       if(show) $(this).show(300);
-
+      
     });
-
   }
 
 });
