@@ -1,37 +1,36 @@
-/* 1️⃣ Very Small Phones (≤320px)
---------------------------------------------------------------*/
-@media screen and (max-width: 320px) {
-
-}
-
-/* 2️⃣ Small Phones (321px–480px)
---------------------------------------------------------------*/
-@media screen and (max-width: 480px) {
-
-}
-
-/* 3️⃣ Medium Phones (481px–576px)
---------------------------------------------------------------*/
-@media screen and (max-width: 576px) {
-
-}
-
-/* 4️⃣ Large Phones / Small Tablets (577px–768px)
---------------------------------------------------------------*/
-@media screen and (max-width: 768px) {
-
-}
-
 /* 5️⃣ Small Tablets (769px–992px)
 --------------------------------------------------------------*/
 @media screen and (max-width: 992px) {
+    .subBar{
+        display:none;
+    }
 
+    .sidebar{
+        left: -2500px;
+    }
+
+    #subjectList{
+        display: block !important;
+    }
+
+    .NotesPadding{
+        padding-top: 70px;
+    }
+
+    .main{
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .optionPadding{
+        padding-top: 95px !important;
+    }
 }
 
 /* 6️⃣ Medium Tablets / Small Laptops (993px–1200px)
 --------------------------------------------------------------*/
-@media screen and (max-width: 1200px) {
-.subBar{
-    display:none;
-}
+@media screen and (max-width: 1280px) {
+    .overWrite{
+        display: none;
+    }
 }

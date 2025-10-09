@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #0f172a, #020617); /* Dark gradient background */
+  background: linear-gradient(135deg,#0f172a,#020617); /* Dark gradient background */
   overflow: hidden;
   height: 100vh;
   width: 100vw;
@@ -20,15 +20,15 @@ body {
 
 :root {
   /* Animation durations for each circle (controls speed of floating) */
-  --duration-1: 10s;  /* Circle 1 */
-  --duration-2: 11s;  /* Circle 2 */
-  --duration-3: 12s;  /* Circle 3 */
-  --duration-4: 13s;  /* Circle 4 */
-  --duration-5: 14s;  /* Circle 5 */
-  --duration-6: 12s;  /* Circle 6 */
-  --duration-7: 10s;  /* Circle 7 */
-  --duration-8: 11s;  /* Circle 8 */
-  --duration-9: 12s;  /* Circle 9 */
+  --duration-1: 10s; /* Circle 1 */
+  --duration-2: 11s; /* Circle 2 */
+  --duration-3: 12s; /* Circle 3 */
+  --duration-4: 13s; /* Circle 4 */
+  --duration-5: 14s; /* Circle 5 */
+  --duration-6: 12s; /* Circle 6 */
+  --duration-7: 10s; /* Circle 7 */
+  --duration-8: 11s; /* Circle 8 */
+  --duration-9: 12s; /* Circle 9 */
   --duration-10: 13s; /* Circle 10 */
   --duration-11: 14s; /* Circle 11 */
   --duration-12: 15s; /* Circle 12 */
@@ -37,21 +37,21 @@ body {
   --duration-15: 14s; /* Circle 15 */
 
   /* Animation delays for each circle (stagger animation start times) */
-  --delay-1: 0.1s;   /* Circle 1 */
-  --delay-2: 0.15s;  /* Circle 2 */
-  --delay-3: 0.2s;   /* Circle 3 */
-  --delay-4: 0.25s;  /* Circle 4 */
-  --delay-5: 0.3s;   /* Circle 5 */
-  --delay-6: 0.35s;  /* Circle 6 */
-  --delay-7: 0.4s;   /* Circle 7 */
-  --delay-8: 0.45s;  /* Circle 8 */
-  --delay-9: 0.5s;   /* Circle 9 */
+  --delay-1: 0.1s; /* Circle 1 */
+  --delay-2: 0.15s; /* Circle 2 */
+  --delay-3: 0.2s; /* Circle 3 */
+  --delay-4: 0.25s; /* Circle 4 */
+  --delay-5: 0.3s; /* Circle 5 */
+  --delay-6: 0.35s; /* Circle 6 */
+  --delay-7: 0.4s; /* Circle 7 */
+  --delay-8: 0.45s; /* Circle 8 */
+  --delay-9: 0.5s; /* Circle 9 */
   --delay-10: 0.55s; /* Circle 10 */
-  --delay-11: 0.6s;  /* Circle 11 */
+  --delay-11: 0.6s; /* Circle 11 */
   --delay-12: 0.65s; /* Circle 12 */
-  --delay-13: 0.7s;  /* Circle 13 */
+  --delay-13: 0.7s; /* Circle 13 */
   --delay-14: 0.75s; /* Circle 14 */
-  --delay-15: 0.8s;  /* Circle 15 */
+  --delay-15: 0.8s; /* Circle 15 */
 }
 
 /* ===========================
@@ -86,11 +86,38 @@ body {
 
 /* Floating animation for circles */
 @keyframes float {
-  0%   { transform: translate(0,0) scale(1); opacity:0.6; }
-  25%  { transform: translate(calc(-5vw + 10vw * var(--rand,0.5)), calc(-5vh + 10vh * var(--rand2,0.5))) scale(1.05); opacity:0.8; }
-  50%  { transform: translate(calc(-8vw + 16vw * var(--rand,0.3)), calc(-8vh + 16vh * var(--rand2,0.7))) scale(1); opacity:1; }
-  75%  { transform: translate(calc(-6vw + 12vw * var(--rand,0.6)), calc(-6vh + 12vh * var(--rand2,0.4))) scale(1.1); opacity:0.75; }
-  100% { transform: translate(0,0) scale(1.2); opacity:0; }
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translate(
+        calc(-5vw + 10vw * var(--rand, 0.5)),
+        calc(-5vh + 10vh * var(--rand2, 0.5))
+      )
+      scale(1.05);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(
+        calc(-8vw + 16vw * var(--rand, 0.3)),
+        calc(-8vh + 16vh * var(--rand2, 0.7))
+      )
+      scale(1);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(
+        calc(-6vw + 12vw * var(--rand, 0.6)),
+        calc(-6vh + 12vh * var(--rand2, 0.4))
+      )
+      scale(1.1);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translate(0, 0) scale(1.2);
+    opacity: 0;
+  }
 }
 
 /* ===========================
@@ -98,7 +125,8 @@ body {
   =========================== */
 .main-container {
   position: fixed;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
   text-align: center;
@@ -145,7 +173,7 @@ body {
 }
 .buttons button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(56,189,248,0.5);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.5);
 }
 
 /* ===========================
@@ -154,18 +182,19 @@ body {
 .popup-card {
   display: none;
   position: fixed;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%) scale(0.8) translateY(-50px);
-  background: rgba(15,23,42,0.4); 
-  backdrop-filter: blur(15px);    
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(15px);
   border-radius: 20px;
   padding: 40px 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   z-index: 2;
   max-width: 400px;
   width: 90%;
   text-align: center;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   opacity: 0;
   transition: all 0.3s ease;
 }
@@ -199,5 +228,5 @@ body {
 }
 .popup-card button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(56,189,248,0.5);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.5);
 }

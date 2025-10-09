@@ -1,6 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Delius&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Merienda:wght@300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Delius&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Merienda:wght@300..900&display=swap");
 
-:root{
+:root {
+/*    --Navbar-color:#1A2A80;
+    --MenuBar-color: #636CCB;
+    --Sidebar-color: #3B38A0; 
+*/
     --Text-color: rgba(255, 255, 255, 0.75);
     --secondary-color: rgb(64 64 64 / 10%);
 }
@@ -8,29 +12,37 @@
 body {
   background: #f4f7fb;
   scroll-behavior: smooth;
-
 }
 
-.white, option{
-    color: var(--Text-color) !important;
+.white,
+option {
+  color: var(--Text-color) !important;
 }
 
-h1, h2, h3, h4{font-family: "Merienda", cursive;}
-a, i, p, .white, option{font-family: "Delius", cursive;}
-
-.btn:hover{
-    background-color: white !important;
-    color: #000 !important;
-    transition: all linear 0.25s;
+h1,h2,h3,h4 {
+  font-family: "Merienda", cursive;
+}
+a,i,p,.white,option {
+  font-family: "Delius", cursive;
 }
 
-.z-100 {z-index: 100 !important;}
-.z-200 {z-index: 200 !important;}
+.btn:hover {
+  background-color: white !important;
+  color: #000 !important;
+  transition: all linear 0.25s;
+}
 
-header{
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
+.z-100 {
+  z-index: 100 !important;
+}
+.z-200 {
+  z-index: 200 !important;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
 }
 
 .barColor {
@@ -45,26 +57,41 @@ header{
   min-width: 280px;
   max-width: 320px;
   min-height: 100vh;
+  transition: left 0.5s ease-in-out;
 }
 
-.main{
-    margin-left: 270px;
+.sidebar.show {
+  left: 0;
 }
 
-.paddingTop{
-    padding-top: 155px;
-}
-.marginTop{
-    margin-top: 72px;
+.main {
+  margin-left: 270px;
 }
 
-.shotBy{
-    max-width: 195px;
-    margin-left: 10px;
+.NotesPadding {
+  padding-top: 135px;
 }
 
-#welcomeBox, #filterBox, 
-#teacherBox, #dateBox, 
-.subject-card, .allFilters{
-    display: none;
+.marginTop {
+  margin-top: 72px;
+}
+
+.optionPadding {
+  padding-top: 170px;
+}
+
+.optionMargin {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.shotBy {
+  max-width: 204px;
+}
+
+#welcomeBox,#filterBox,
+#teacherBox,#dateBox,
+.subject-card,.allFilters,
+#subjectList {
+  display: none;
 }
