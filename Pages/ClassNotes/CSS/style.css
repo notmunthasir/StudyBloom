@@ -95,3 +95,74 @@ header {
 #subjectList {
   display: none;
 }
+
+/* Branch */
+
+/* Tree container */
+.tree-container {
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  line-height: 1.8;
+  font-size: 16px;
+  overflow-x: auto; /* Allows horizontal scroll on very small screens */
+}
+
+/* UL class */
+.tree-list {
+  list-style-type: none;
+  position: relative;
+  padding-left: 00px;
+}
+
+/* Nested UL */
+.tree-list .tree-list {
+  border-left: 2px solid #0d6efd;
+  margin-left: 20px;
+  padding-left: 25px;
+}
+
+/* LI class */
+.tree-item {
+  position: relative;
+  margin: 8px 0;
+  padding-left: 10px;
+}
+
+/* Lines */
+.tree-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -2px;
+  border-left: 2px solid #0d6efd;
+  height: 100%;
+}
+
+.tree-item::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: -2px;
+  width: 20px;
+  border-top: 2px solid #0d6efd;
+}
+
+.tree-item:last-child::before {
+  height: 14px;
+}
+
+/* Node span */
+.tree-node {
+  display: inline-block;
+  background: #e9f2ff;
+  color: #0d6efd;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.tree-node:hover {
+  background: #0d6efd;
+  color: white;
+}

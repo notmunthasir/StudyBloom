@@ -34,3 +34,43 @@
         display: none;
     }
 }
+
+/* RESPONSIVE STYLES */
+@media screen and (max-width: 768px) {
+  .tree-container {
+    padding: 20px;
+    font-size: 14px;
+  }
+  .tree-list .tree-list {
+    margin-left: 15px;
+    padding-left: 20px;
+  }
+  .tree-node {
+    padding: 3px 8px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .tree-list .tree-list {
+    margin-left: 10px;
+    padding-left: 15px;
+  }
+  .tree-node {
+    padding: 2px 6px;
+    font-size: 12px;
+  }
+}
+
+/* Responsive for screens <= 992px */
+@media screen and (max-width: 992px) {
+  .tree-list .tree-list {
+    margin-left: 15px;  /* reduce indentation */
+    padding-left: 20px;
+  }
+
+  .tree-node {
+    padding: 3px 8px;
+    font-size: 14px;
+  }
+}
